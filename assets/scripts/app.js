@@ -1,16 +1,15 @@
 const inputOf = document.querySelector('.numberOf')
 const inputUpTo = document.querySelector('.numberUpTo')
 const btnGenerate= document.querySelector('.generate')
-const btnClear= document.querySelector('.clear')
+const btnClear = document.querySelector('.clear')
 const paragraph = document.querySelector('p')
-
 
 btnGenerate.addEventListener('click', () => {
     if(convertStringToNumber()){
         const randomNumber = Math.random() 
         const numRandom = Math.round(randomNumber * (inputUpTo.value - inputOf.value) + inputOf.value)
-        
-        paragraph.textContent = numRandom
+
+        paragraph.textContent =`Número sorteado: ${numRandom}`
     }
 })
 
