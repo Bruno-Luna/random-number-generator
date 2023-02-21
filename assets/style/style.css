@@ -1,0 +1,37 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+header {
+    height: 20vh;
+}
+
+header, section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2, p, button, label, input {
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+button, input {
+    width: 22vw;
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+p { 
+    margin-top: 1rem;
+    text-align: center;
+}
