@@ -28,6 +28,11 @@ const convertStringToNumber = () => {
         alert('Número não pode ser menor que o inicial!')
         return false
     }
+   
+    if(!numUpToConverte || !numOfConverte){
+        alert('Campo(s) vazio(s)!')
+        return false
+    }
 
     return true
 }
