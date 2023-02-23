@@ -36,5 +36,12 @@ const clearValues = () => {
     paragraph.textContent = ''
 }
 
+const convertStringToNumber = () => {
+    const numUpToConverte = Number(inputUpTo.value) 
+    const numOfConverte = Number(inputOf.value)
+
+    return { numOfConverte, numUpToConverte }
+}
+
 btnClear.addEventListener('click', clearValues)
 btnGenerate.addEventListener('click', generateNumber)
