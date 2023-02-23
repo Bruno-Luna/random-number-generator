@@ -4,16 +4,15 @@ const paragraph = document.querySelector('p')
 const btnClear = document.querySelector('.clear')
 const inputOf = document.querySelector('.numberOf')
 
-const convertStringToNumber = () => {
-    const numUpToConverte = Number(inputUpTo.value) 
-    const numOfConverte = Number(inputOf.value)
-    
-    if(numUpToConverte < numOfConverte){
+const checkNumber = () => {
+    const numbers = convertStringToNumber()
+
+    if(numbers.numUpToConverte < numbers.numOfConverte){
         alert('Número não pode ser menor que o inicial!')
         return false
     }
    
-    if(!numUpToConverte || !numOfConverte){
+    if(!numbers.numUpToConverte || !numbers.numOfConverte){
         alert('Campo(s) vazio(s)!')
         return false
     }
