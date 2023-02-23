@@ -22,9 +22,10 @@ const convertStringToNumber = () => {
 }
 
 const generateNumber = () => {
-    if(convertStringToNumber()){
-        const randomNumber = Math.random() 
-        const numRandom = Math.round(randomNumber * (inputUpTo.value - inputOf.value) + inputOf.value)
+    if(checkNumber()){
+        const numbers = convertStringToNumber()
+
+        const numRandom = Math.floor(Math.random() * (numbers.numUpToConverte - numbers.numOfConverte + 1) + numbers.numOfConverte);
         
         paragraph.textContent =`Número sorteado: ${numRandom}`
     }
