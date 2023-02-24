@@ -5,16 +5,16 @@ const btnClear = document.querySelector('.clear')
 const inputOf = document.querySelector('.numberOf')
 
 const checkNumber = () => {
-    const numbers = convertStringToNumber()
-
-    if(numbers.numUpToConverte < numbers.numOfConverte){
-        alert('Número não pode ser menor que o inicial!')
-        return false
-    }
-   
-    if(!numbers.numUpToConverte || !numbers.numOfConverte){
-        alert('Campo(s) vazio(s)!')
-        return false
+    if(convertStringToNumber()){
+        
+        const numbers = convertStringToNumber()
+        if(numbers.numUpToConverte < numbers.numOfConverte){
+            alert('Número não pode ser menor que o inicial!')
+            return false
+        }
+    } else {
+            alert('Campo(s) vazio(s)!')
+            return false
     }
 
     return true
@@ -22,11 +22,14 @@ const checkNumber = () => {
 
 const generateNumber = () => {
     if(checkNumber()){
+        
+        if(convertStringToNumber()){
+            
         const numbers = convertStringToNumber()
-
         const numRandom = Math.floor(Math.random() * (numbers.numUpToConverte - numbers.numOfConverte + 1) + numbers.numOfConverte);
         
         paragraph.textContent =`Número sorteado: ${numRandom}`
+        }
     }
 }
 
@@ -37,10 +40,14 @@ const clearValues = () => {
 }
 
 const convertStringToNumber = () => {
-    const numUpToConverte = Number(inputUpTo.value) 
-    const numOfConverte = Number(inputOf.value)
+    if (inputOf.value || inputUpTo.value !== '') {   
+        const numOfConverte = Number(inputOf.value)
+        const numUpToConverte = Number(inputUpTo.value)
+         
+        return { numOfConverte, numUpToConverte }
+    }
 
-    return { numOfConverte, numUpToConverte }
+    return false
 }
 
 btnClear.addEventListener('click', clearValues)
