@@ -40,7 +40,7 @@ const clearValues = () => {
 }
 
 const convertStringToNumber = () => {
-    if (inputOf.value || inputUpTo.value !== '') {   
+    if (inputOf.value && inputUpTo.value !== '') {   
         const numOfConverte = Number(inputOf.value)
         const numUpToConverte = Number(inputUpTo.value)
          
